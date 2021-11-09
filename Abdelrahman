@@ -1,0 +1,24 @@
+from datetime import datetime
+
+now=datetime.now()
+y=int(now.strftime("%M"))
+x=int(now.strftime("%S"))
+sum = x + y
+
+import random 
+value =int(random.uniform(1, 1000000000000)*(sum))
+seed= value
+count=0
+xy=int(input("enter how many numbers you want generated:"))
+for i in range(xy):
+    import time
+    time.sleep(1)
+    def lcg(a=3, c=1 ,m=19):
+       global seed 
+       seed = ((a*seed + c) % m)
+       return seed/m*1000
+   
+   
+       
+    print(lcg())
+count = count + 1
